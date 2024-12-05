@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 4000 --turbopack",
+    "dev": "npx tsx ./src/server.ts --turbopack",
     "build": "next build",
-    "start": "next start",
+    "start": "node ./dis/server.js",
     "lint": "next lint"
   },
   "dependencies": {
@@ -15,11 +15,20 @@
     "@mui/icons-material": "^6.1.9",
     "@mui/material": "^6.1.9",
     "@mui/material-nextjs": "^6.1.9",
+    "@mui/x-charts": "^7.23.0",
+    "@mui/x-data-grid": "^7.23.0",
+    "@mui/x-date-pickers": "^7.23.0",
+    "@mui/x-tree-view": "^7.23.0",
+    "@react-spring/web": "^9.7.5",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
     "drizzle-orm": "^0.37.0",
     "mysql2": "^3.11.5",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106"
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -28,6 +37,11 @@
     "drizzle-kit": "^0.29.0",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
+    "tsx": "^4.19.2",
     "typescript": "^5"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.8",
+    "utf-8-validate": "^6.0.5"
   }
 }

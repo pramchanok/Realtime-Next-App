@@ -11,7 +11,7 @@ export default async function UserPage() {
             {
                 users.map((user) => (
                     <div key={user.id}>
-                        <p>{user.fullname}</p>
+                        <p>{user.fullname} {user.email}</p>
                     </div>
                 ))
             }

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-
-import "./globals.css";
+import { ThemeProvider } from "@mui/material/styles";
+import themeAdmin from "./theme-admin";
+import Dashboard from "./dashboard/components/dashboard/Dashboard";
 
 export const metadata: Metadata = {
   title: process.env.APP_NAME,
@@ -17,9 +18,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AppRouterCacheProvider>
-          {children}
+          <ThemeProvider theme={themeAdmin}>
+            <Dashboard>{children}</Dashboard>
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
-    </html>
+    </html >
   );
 }
